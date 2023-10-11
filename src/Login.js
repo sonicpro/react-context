@@ -1,9 +1,8 @@
-import React, { useContext } from 'react';
-import { UserContext } from './LoginContext';
+import useUserContext from './useLoginContext';
 import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
-  const [ user, setUser ] = useContext(UserContext);
+  const [ user, setUser ] = useUserContext();
   const history = useNavigate();
   const login = (e) => {
     e.preventDefault();

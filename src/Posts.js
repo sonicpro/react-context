@@ -1,10 +1,10 @@
-import React, { useEffect, useState, useContext } from 'react';
+import { useEffect, useState, useContext } from 'react';
 import TopMenu from './TopMenu';
-import { UserContext } from './LoginContext';
+import useUserContext from './useLoginContext';
 
 const Users = () => {
   const [posts, setPosts] = useState([]);
-  const [ user ] = useContext(UserContext);
+  const [ user, _ ] = useUserContext();
   useEffect(() => {
     {user && fetch('https://jsonplaceholder.typicode.com/posts')
       .then(res => res.json())
